@@ -36,7 +36,18 @@ def display_data():
 
 
 # Add record
-
+def add_data():
+    product_name = input("Product Name: ")
+    category = input("Category: ")
+    price = float(input("Price: "))
+    stock = int(input("Quantity in Stock: "))
+    supply = input("Supplier: ")
+    product_ids.append(product_ids[-1] + 1)
+    product_names.append(product_names)
+    categories.append(categories)
+    prices.append(price)
+    quantity_in_stock.append(stock)
+    suppliers.append(suppliers)
 
 # Delete record
 
