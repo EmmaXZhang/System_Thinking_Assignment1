@@ -40,9 +40,20 @@ def display_data():
     for i in range(len(product_ids)):
         print(f"{product_ids[i]:>10} {product_names[i]:<45} {categories[i]:<10} {prices[i]:>10.2f} {quantity_in_stock[i]:>19} {suppliers[i]:<13}")
 
-display_data()
-# Add record
 
+# Add record
+def add_data():
+    product_name = input("Product Name: ")
+    category = input("Category: ")
+    price = float(input("Price: "))
+    stock = int(input("Quantity in Stock: "))
+    supply = input("Supplier: ")
+    product_ids.append(product_ids[-1]+1)
+    product_names.append(product_names)
+    categories.append(categories)
+    prices.append(price)
+    quantity_in_stock.append(stock)
+    suppliers.append(suppliers)
 
 # Delete record
 
