@@ -8,7 +8,7 @@ quantity_in_stock = []
 suppliers = []
 
 # load data
-csv_file = "product_data.csv"
+csv_file = "product_data1.csv"
 
 
 # with-> resource management, open()-> open a file, read-only
