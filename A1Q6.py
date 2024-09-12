@@ -7,6 +7,8 @@ user_choice = input("Choose menu option: \n 1.Load records \n 2.Display \n 3.Add
 # Display
 
 
+
+
 # Add record
 
 
