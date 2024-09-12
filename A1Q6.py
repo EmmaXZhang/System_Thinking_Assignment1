@@ -25,7 +25,13 @@ def load_record(file):
             prices.append(float(row[3]))
             quantity_in_stock.append(int(row[4]))
             suppliers.append(row[5])
-
+        print("Load Successfully!")
+        print("Product IDs:", product_ids)
+        print("Product Names:", product_names)
+        print("Categories:", categories)
+        print("Prices:", prices)
+        print("Quantity_in_stock:", quantity_in_stock)
+        print("Suppliers:", suppliers)
 # Display
 def display_data():
     load_record(csv_file)
@@ -34,7 +40,7 @@ def display_data():
     for i in range(len(product_ids)):
         print(f"{product_ids[i]:>10} {product_names[i]:<45} {categories[i]:<10} {prices[i]:>10.2f} {quantity_in_stock[i]:>19} {suppliers[i]:<13}")
 
-
+display_data()
 # Add record
 
 
