@@ -41,13 +41,13 @@ def add_data():
     category = input("Category: ")
     price = float(input("Price: "))
     stock = int(input("Quantity in Stock: "))
-    supply = input("Supplier: ")
+    supplier = input("Supplier: ")
     product_ids.append(product_ids[-1] + 1)
-    product_names.append(product_names)
-    categories.append(categories)
+    product_names.append(product_name)
+    categories.append(category)
     prices.append(price)
     quantity_in_stock.append(stock)
-    suppliers.append(suppliers)
+    suppliers.append(supplier)
 
 # Delete record
 
