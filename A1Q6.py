@@ -27,8 +27,12 @@ def load_record(file):
             suppliers.append(row[5])
 
 # Display
-
-
+def display_data():
+    load_record(csv_file)
+    print(f"{'Product_Id':>10} {'Product_Name':<45} {'Category':<10} {'Price':>10} {'Quantity_in_Stock':>19} {'Supplier':<13}")
+    print("-" * 110)
+    for i in range(len(product_ids)):
+        print(f"{product_ids[i]:>10} {product_names[i]:<45} {categories[i]:<10} {prices[i]:>10.2f} {quantity_in_stock[i]:>19} {suppliers[i]:<13}")
 
 
 # Add record
