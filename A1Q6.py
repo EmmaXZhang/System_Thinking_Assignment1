@@ -96,3 +96,5 @@ def delete_data():
     quantity_in_stock.pop(delete_index)
     suppliers.pop(delete_index)
     print(f"Product with ID {delete_id} deleted successfully.")
+
+
