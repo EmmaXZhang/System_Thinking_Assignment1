@@ -120,7 +120,7 @@ def exit_app():
     exit()
 
 def menu():
-
+    # keep loop until break or exit() function is called
     while True:
         user_choice = int(input(
            "\nChoose menu option: \n 1.Load records \n 2.Display \n 3.Add record \n 4.Delete record \n 5.Save records \n 6.Exit \n Select: "))
