@@ -118,3 +118,26 @@ def save_data():
 def exit_app():
     print("Exiting the application successfully.")
     exit()
+
+def menu():
+
+    while True:
+        user_choice = int(input(
+           "\nChoose menu option: \n 1.Load records \n 2.Display \n 3.Add record \n 4.Delete record \n 5.Save records \n 6.Exit \n Select: "))
+        match user_choice:
+            case 1:
+                load_record(csv_file)
+            case 2:
+                display_data()
+            case 3:
+                add_data()
+            case 4:
+                delete_data()
+            case 5:
+                save_data()
+            case 6:
+                exit_app()
+            case _:
+                print("Invalid option. Please select from 1 to 6.")
+# Run the menu
+menu()
