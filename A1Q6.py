@@ -96,3 +96,18 @@ def delete_data():
     quantity_in_stock.pop(delete_index)
     suppliers.pop(delete_index)
     print(f"Product with ID {delete_id} deleted successfully.")
+
+
+# Save record
+def save_data():
+    with open(csv_file, mode='w', newline='') as product_inventory:
+        writer = csv.writer(product_inventory)
+        # write the header:
+        writer.writerow(
+        ["Product ID", "Product Name", "Category", "Price", "Quantity in Stock", "Supplier"])  # Write the header
+        # Write all product data
+        for i in range(len(product_ids)):
+            writer.writerow(
+                [product_ids[i], product_names[i], categories[i], prices[i], quantity_in_stock[i], suppliers[i]])
+
+    print("Records saved successfully.")
