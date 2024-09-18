@@ -12,8 +12,16 @@ quantity_in_stock = []
 suppliers = []
 csv_file = "product_data2.csv"
 
-def load_record(file):
-    with open(file, mode='r') as product_inventory:
+# load data
+def load_record(csv_file):
+    product_ids.clear()
+    product_names.clear()
+    categories.clear()
+    prices.clear()
+    quantity_in_stock.clear()
+    suppliers.clear()
+
+    with open(csv_file, mode='r') as product_inventory:
         product_data = csv.reader(product_inventory)
         # skip header row
         next(product_data)
@@ -25,6 +33,8 @@ def load_record(file):
             prices.append(float(row[3]))
             quantity_in_stock.append(int(row[4]))
             suppliers.append(row[5])
+
+        print("The record has been loaded successfully!")
 
 # Display
 def display_data():
