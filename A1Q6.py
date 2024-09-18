@@ -41,9 +41,10 @@ def display_data():
         print(f"{product_ids[i]:>10} {product_names[i]:<45} {categories[i]:<10} {prices[i]:>10.2f} {quantity_in_stock[i]:>19} {suppliers[i]:<13}")
 
 
-
-# Add record
+# Add record -> add value to array
+# process: add record to array
 def add_data():
+    # create new id variable
     if product_ids:
         new_id = product_ids[-1] + 1
     else:
@@ -64,3 +65,34 @@ def add_data():
     suppliers.append(supplier)
 
     print("The record has been added successfully!")
+
+
+# Delete record from array
+def delete_data():
+    # no products in the file
+    if not product_ids:
+        print("No records available to delete.")
+        return
+    # else display data
+    display_data()
+
+    # check if id exist,
+    # In a while True loop, the loop itself will run indefinitely until you explicitly break out of it.
+    while True:
+        try:
+            delete_id = int(input("Please enter the Product Id to be deleted: "))
+            if delete_id in product_ids:
+                break
+            else:
+                print("Product ID not found. Please try again.")
+        except ValueError:
+            print("Invalid input. Please enter a valid numeric Product ID.")
+    # find ID, and remote it
+    delete_index = product_ids.index(delete_id)
+    product_ids.pop(delete_index)
+    product_names.pop(delete_index)
+    categories.pop(delete_index)
+    prices.pop(delete_index)
+    quantity_in_stock.pop(delete_index)
+    suppliers.pop(delete_index)
+    print(f"Product with ID {delete_id} deleted successfully.")
