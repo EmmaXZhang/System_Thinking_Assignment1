@@ -42,3 +42,25 @@ def display_data():
 
 
 
+# Add record
+def add_data():
+    if product_ids:
+        new_id = product_ids[-1] + 1
+    else:
+        new_id = 1001
+    product_ids.append(new_id)
+    # Collect product details
+    product_name = input("Product Name: ")
+    category = input("Category: ")
+    price = float(input("Price: "))
+    stock = int(input("Quantity in Stock: "))
+    supplier = input("Supplier: ")
+
+
+    product_names.append(product_name)
+    categories.append(category)
+    prices.append(price)
+    quantity_in_stock.append(stock)
+    suppliers.append(supplier)
+
+    print("The record has been added successfully!")
