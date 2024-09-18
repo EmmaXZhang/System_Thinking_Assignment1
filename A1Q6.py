@@ -64,3 +64,5 @@ def add_data():
     suppliers.append(supplier)
 
     print("The record has been added successfully!")
+
+
