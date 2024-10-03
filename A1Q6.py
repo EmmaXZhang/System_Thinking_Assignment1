@@ -9,6 +9,10 @@ suppliers = []
 csv_file = "product_data2.csv"
 
 # load data
+'''
+Reference:
+1. array.clear(): https://www.w3schools.com/python/ref_list_clear.asp#:~:text=The%20clear()%20method%20removes%20all%20the%20elements%20from%20a%20list.
+'''
 def load_record(csv_file):
     product_ids.clear()
     product_names.clear()
@@ -43,6 +47,11 @@ def display_data():
 
 # Add record -> add value to array
 # process: add record to array
+'''
+Reference:
+1. get last element in array: https://stackoverflow.com/questions/930397/how-do-i-get-the-last-element-of-a-list
+'''
+
 def add_data():
     # create new id variable
     if product_ids:
@@ -68,6 +77,11 @@ def add_data():
 
 
 # Delete record from array
+'''
+Reference:
+1. error handling: https://www.w3schools.com/python/python_try_except.asp
+'''
+
 def delete_data():
     # no products in the file
     if not product_ids:
@@ -98,7 +112,12 @@ def delete_data():
     print(f"Product with ID {delete_id} deleted successfully.")
 
 
-# Save record -> save current array data to csv
+# Save record -> save current array data to csv and load new data to array
+'''
+Reference:
+1. save data to csv file: https://docs.python.org/3/library/csv.html
+'''
+
 def save_data():
     with open(csv_file, mode='w', newline='') as product_inventory:
         writer = csv.writer(product_inventory)
@@ -115,9 +134,20 @@ def save_data():
     load_record(csv_file)
 
 # Exit
+'''
+Reference:
+1. stop script execution: https://stackoverflow.com/questions/19747371/python-exit-commands-why-so-many-and-when-should-each-be-used
+'''
 def exit_app():
     print("Exiting the application successfully.")
     exit()
+
+
+# Main function
+'''
+Reference:
+1. match case: https://www.geeksforgeeks.org/python-match-case-statement/
+'''
 
 def menu():
     # keep loop until break or exit() function is called
