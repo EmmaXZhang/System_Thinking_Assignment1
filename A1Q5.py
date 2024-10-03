@@ -33,3 +33,4 @@ def display_data():
         print(f"{product_ids[i]:>10} {product_names[i]:<45} {categories[i]:<10} {prices[i]:>10.2f} {quantity_in_stock[i]:>19} {suppliers[i]:<13}")
 
 display_data()
+
