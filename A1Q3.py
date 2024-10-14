@@ -23,7 +23,7 @@ with open(csv_file, mode='r') as product_inventory:
     # skip header row
     next(product_data)
 
- # Read over each row in the CSV file
+ # Read over each row in the CSV file and append to arrays
     for row in product_data:
         product_ids.append(int(row[0]))
         product_names.append(row[1])
