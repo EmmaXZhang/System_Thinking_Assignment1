@@ -7,7 +7,7 @@ prices = []
 quantity_in_stock = []
 suppliers = []
 
-# Edit the csv by adding another row to the csv file and define the csv file
+# Edit the csv by adding another row to the csv file and define the csv file path
 csv_file = "product_data1.csv"
 # reading in the csv data into the parallel arrays
 # with-> resource management, open()-> open a file, read-only

@@ -8,7 +8,7 @@ prices = []
 quantity_in_stock = []
 suppliers = []
 
-# define csv file
+# define csv file path
 csv_file = "product_data.csv"
 # Read Data into the Program’s Parallel Arrays
 # with-> resource management, open()-> open a file, read-only
