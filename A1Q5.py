@@ -7,16 +7,14 @@ prices = []
 quantity_in_stock = []
 suppliers = []
 
-# load data
+# Edit the csv by adding another row to the csv file and define the csv file
 csv_file = "product_data1.csv"
-
-
+# reading in the csv data into the parallel arrays
 # with-> resource management, open()-> open a file, read-only
 with open(csv_file, mode='r') as product_inventory:
     product_data = csv.reader(product_inventory)
     # skip header row
     next(product_data)
-    # add product detail data to matrix format
     for row in product_data:
         product_ids.append(int(row[0]))
         product_names.append(row[1])
@@ -25,7 +23,7 @@ with open(csv_file, mode='r') as product_inventory:
         quantity_in_stock.append(int(row[4]))
         suppliers.append(row[5])
 
-# print product inventory data in format
+# print product inventory data in formatted table
 def display_data():
     print(f"{'Product_Id':>10} {'Product_Name':<45} {'Category':<10} {'Price':>10} {'Quantity_in_Stock':>19} {'Supplier':<13}")
     print("-" * 110)

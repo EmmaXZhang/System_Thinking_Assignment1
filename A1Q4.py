@@ -7,16 +7,14 @@ prices = []
 quantity_in_stock = []
 suppliers = []
 
-# load data
+# define csv file
 csv_file = "product_data.csv"
-
-
+# reading in the csv data into the parallel arrays
 # with-> resource management, open()-> open a file, read-only
 with open(csv_file, mode='r') as product_inventory:
     product_data = csv.reader(product_inventory)
     # skip header row
     next(product_data)
-    # add product detail data to matrix format
     for row in product_data:
         product_ids.append(int(row[0]))
         product_names.append(row[1])
@@ -25,7 +23,7 @@ with open(csv_file, mode='r') as product_inventory:
         quantity_in_stock.append(int(row[4]))
         suppliers.append(row[5])
 
-# print product inventory data in format
+# print product inventory data in formatted table
 '''
 Reference：
 1. def function: https://www.w3schools.com/python/python_functions.asp
