@@ -36,7 +36,6 @@ def load_record(csv_file):
 
 '''Display current array data - Implement the formatted display'''
 def display_data():
-    """load_record(csv_file)"""
     print(f"{'Product_Id':>10} {'Product_Name':<45} {'Category':<10} {'Price':>10} {'Quantity_in_Stock':>19} {'Supplier':<13}")
     print("-" * 110)
     for i in range(len(product_ids)):
@@ -48,7 +47,6 @@ Add record function asking the user for each column of information for the new r
 process: add record to parallel arrays structure
 '''
 def add_data():
-    """create new id variable"""
     if product_ids:
         new_id = product_ids[-1] + 1
     else:
@@ -72,7 +70,6 @@ def add_data():
 
 '''Delete record from array'''
 def delete_data():
-    """no products in the file"""
     if not product_ids:
         print("No records available to delete.")
         return
@@ -128,7 +125,6 @@ def exit_app():
 
 '''Main function'''
 def menu():
-    """keep loop until break or exit() function is called"""
     while True:
         user_choice = int(input(
            "\nChoose menu option: \n 1.Load records \n 2.Display \n 3.Add record \n 4.Delete record \n 5.Save records \n 6.Exit \n Select: "))
