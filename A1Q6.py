@@ -1,5 +1,5 @@
 import csv
-# global array
+'''global array'''
 product_ids = []
 product_names = []
 categories = []
@@ -7,14 +7,10 @@ prices = []
 quantity_in_stock = []
 suppliers = []
 
-# define csv file
+'''define csv file'''
 csv_file = "product_data2.csv"
 
-# load data from csv file
-'''
-Reference:
-1. array.clear(): https://www.w3schools.com/python/ref_list_clear.asp#:~:text=The%20clear()%20method%20removes%20all%20the%20elements%20from%20a%20list.
-'''
+'''load data from csv file'''
 def load_record(csv_file):
     product_ids.clear()
     product_names.clear()
@@ -25,9 +21,9 @@ def load_record(csv_file):
 
     with open(csv_file, mode='r') as product_inventory:
         product_data = csv.reader(product_inventory)
-        # skip header row
+        '''skip header row'''
         next(product_data)
-        # add product detail data to matrix format
+        '''add product detail data to matrix format'''
         for row in product_data:
             product_ids.append(int(row[0]))
             product_names.append(row[1])
@@ -38,35 +34,32 @@ def load_record(csv_file):
 
         print("The record has been loaded successfully!")
 
-# Display current array data - Implement the formatted display
+'''Display current array data - Implement the formatted display'''
 def display_data():
-    # load_record(csv_file)
+    """load_record(csv_file)"""
     print(f"{'Product_Id':>10} {'Product_Name':<45} {'Category':<10} {'Price':>10} {'Quantity_in_Stock':>19} {'Supplier':<13}")
     print("-" * 110)
     for i in range(len(product_ids)):
         print(f"{product_ids[i]:>10} {product_names[i]:<45} {categories[i]:<10} {prices[i]:>10.2f} {quantity_in_stock[i]:>19} {suppliers[i]:<13}")
 
 
-# Add record function asking the user for each column of information for the new row
-# process: add record to parallel arrays structure
 '''
-Reference:
-1. get last element in array: https://stackoverflow.com/questions/930397/how-do-i-get-the-last-element-of-a-list
+Add record function asking the user for each column of information for the new row
+process: add record to parallel arrays structure
 '''
 def add_data():
-    # create new id variable
+    """create new id variable"""
     if product_ids:
         new_id = product_ids[-1] + 1
     else:
         new_id = 1001
     product_ids.append(new_id)
-    # Collect product details
+    '''Collect product details'''
     product_name = input("Product Name: ")
     category = input("Category: ")
     price = float(input("Price: "))
     stock = int(input("Quantity in Stock: "))
     supplier = input("Supplier: ")
-
 
     product_names.append(product_name)
     categories.append(category)
@@ -77,21 +70,17 @@ def add_data():
     print("The record has been added successfully!")
 
 
-# Delete record from array
-'''
-Reference:
-1. error handling: https://www.w3schools.com/python/python_try_except.asp
-'''
+'''Delete record from array'''
 def delete_data():
-    # no products in the file
+    """no products in the file"""
     if not product_ids:
         print("No records available to delete.")
         return
-    # else display data
+    '''else display data'''
     display_data()
 
-    # check if id exist,
-    # In a while True loop, the loop itself will run indefinitely until you explicitly break out of it.
+    '''check if id exist,
+    In a while True loop, the loop itself will run indefinitely until you explicitly break out of it.'''
     while True:
         try:
             delete_id = int(input("Please enter the Product Id to be deleted: "))
@@ -101,7 +90,8 @@ def delete_data():
                 print("Product ID not found. Please try again.")
         except ValueError:
             print("Invalid input. Please enter a valid numeric Product ID.")
-    # find ID, and remote it
+
+    '''find ID, and remote it'''
     delete_index = product_ids.index(delete_id)
     product_ids.pop(delete_index)
     product_names.pop(delete_index)
@@ -112,44 +102,33 @@ def delete_data():
     print(f"Product with ID {delete_id} deleted successfully.")
 
 
-# Save record -> save current array data to csv and load new data to array
-'''
-Reference:
-1. save data to csv file: https://docs.python.org/3/library/csv.html
-'''
+'''Save record -> save current array data to csv and load new data to array'''
 def save_data():
     with open(csv_file, mode='w', newline='') as product_inventory:
         writer = csv.writer(product_inventory)
-        # write the header:
+        '''write the header:'''
         writer.writerow(
-        ["Product ID", "Product Name", "Category", "Price", "Quantity in Stock", "Supplier"])  # Write the header
-        # Write all product data
+        ["Product ID", "Product Name", "Category", "Price", "Quantity in Stock", "Supplier"])
+
+        '''Write all product data'''
         for i in range(len(product_ids)):
             writer.writerow(
                 [product_ids[i], product_names[i], categories[i], prices[i], quantity_in_stock[i], suppliers[i]])
 
     print("Records saved successfully.")
-    # load new data to array
+    '''load new data to array'''
     load_record(csv_file)
 
 
-# Exit menu
-'''
-Reference:
-1. stop script execution: https://stackoverflow.com/questions/19747371/python-exit-commands-why-so-many-and-when-should-each-be-used
-'''
+'''Exit menu'''
 def exit_app():
     print("Exiting the application successfully.")
     exit()
 
 
-# Main function
-'''
-Reference:
-1. match case: https://www.geeksforgeeks.org/python-match-case-statement/
-'''
+'''Main function'''
 def menu():
-    # keep loop until break or exit() function is called
+    """keep loop until break or exit() function is called"""
     while True:
         user_choice = int(input(
            "\nChoose menu option: \n 1.Load records \n 2.Display \n 3.Add record \n 4.Delete record \n 5.Save records \n 6.Exit \n Select: "))
@@ -168,5 +147,7 @@ def menu():
                 exit_app()
             case _:
                 print("Invalid option. Please select from 1 to 6.")
-# Run the menu
+
+
+'''Run the menu'''
 menu()
