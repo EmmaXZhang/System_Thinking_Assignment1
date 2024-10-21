@@ -23,7 +23,7 @@ def load_record(csv_file):
         product_data = csv.reader(product_inventory)
         '''skip header row'''
         next(product_data)
-        '''add product detail data to matrix format'''
+        '''add product detail data to parallel array'''
         for row in product_data:
             product_ids.append(int(row[0]))
             product_names.append(row[1])
