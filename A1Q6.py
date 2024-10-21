@@ -88,7 +88,7 @@ def delete_data():
         except ValueError:
             print("Invalid input. Please enter a valid numeric Product ID.")
 
-    '''find ID, and remote it'''
+    '''find ID, and remove it'''
     delete_index = product_ids.index(delete_id)
     product_ids.pop(delete_index)
     product_names.pop(delete_index)
